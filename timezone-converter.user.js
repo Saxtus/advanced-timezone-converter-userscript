@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         Advanced Timezone Converter
-// @namespace    https://gist.github.com/Saxtus/614ea495db07fa140c347a9e1227e0cc
+// @namespace    https://github.com/Saxtus/advanced-timezone-converter-userscript/
 // @version      2025-04-28.001
+// @updateURL    https://github.com/Saxtus/advanced-timezone-converter-userscript/releases/latest/download/timezone-converter.user.js
+// @downloadURL  https://github.com/Saxtus/advanced-timezone-converter-userscript/releases/latest/download/timezone-converter.user.js
 // @description  Show browser's timezone equivalent with improved configuration and date format parsing
 // @author       Saxtus
 // @match        *://*/*
