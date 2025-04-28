@@ -9,5 +9,5 @@ A userscript that converts date/time strings on webpages from a known source tim
 
 ## Installation
 1. Install [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/).
-2. [Click here to install the script](./releases/latest/download/timezone-converter.user.js?raw=1)
+2. [Click here to install the script](./releases/latest/download/timezone-converter.user.js)
 3. Configure per-site timezone with the menu option.
