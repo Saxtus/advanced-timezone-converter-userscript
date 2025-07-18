@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Advanced Timezone Converter
 // @namespace    https://github.com/Saxtus/advanced-timezone-converter-userscript/
-// @version      2025-04-28.001
+// @version      2025-07-18.001
 // @updateURL    https://github.com/Saxtus/advanced-timezone-converter-userscript/releases/latest/download/timezone-converter.user.js
 // @downloadURL  https://github.com/Saxtus/advanced-timezone-converter-userscript/releases/latest/download/timezone-converter.user.js
 // @description  Show browser's timezone equivalent with improved configuration and date format parsing
@@ -225,6 +225,34 @@
               format: "dd.MM.yyyy HH:mm",
               orig: match,
             };
+        },
+      },
+      // US‑style date where the time is wrapped in parentheses,
+      // e.g. 07/18/2025 (04:01), 07/18/2025 (04:01:30) or 07/18/2025 (04:01 PM)
+      {
+        re: /(\d{1,2}\/\d{1,2}\/\d{4})\s*\(\s*(\d{1,2}:\d{2}(?::\d{2})?(?:\s*[AP]M)?)\s*\)/gi,
+        parse: function (match, g1, g2) {
+          const datePart  = g1.trim();          // 07/18/2025
+          const timePart  = g2.trim();          // 04:01  |  04:01:30  |  04:01 PM
+          const hasAmPm   = /[AP]M$/i.test(timePart);
+          const hasSecs   = timePart.split(':').length === 3;  // hh:mm:ss?
+
+          let format;
+          if (hasAmPm) {
+            format = hasSecs
+              ? "MM/dd/yyyy hh:mm:ss a"
+              : "MM/dd/yyyy hh:mm a";
+          } else {
+            format = hasSecs
+              ? "MM/dd/yyyy HH:mm:ss"
+              : "MM/dd/yyyy HH:mm";
+          }
+
+          return {
+            toParse: `${datePart} ${timePart}`,
+            format,
+            orig: match,
+          };
         },
       },
     ];
