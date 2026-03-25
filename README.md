@@ -11,5 +11,5 @@ A vibe-coded userscript that converts date/time strings on webpages from a known
 
 ## Installation
 1. Install [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/).
-2. [Click here to install the script](https://github.com/Saxtus/advanced-timezone-converter-userscript/raw/refs/heads/main/timezone-converter.user.js)
+2. [Click here to install the script](https://github.com/Saxtus/advanced-timezone-converter-userscript/releases/latest/download/timezone-converter.user.js)
 3. Configure per-site timezone with the menu option.
